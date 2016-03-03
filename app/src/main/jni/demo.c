@@ -11,7 +11,10 @@ typedef struct {
 
 JNIEXPORT jstring JNICALL
 Java_pl_droidsonroids_ndkdemo_Demo_getHelloWorld(JNIEnv *env, jobject instance) {
-    LOGE("hello %s %p", "world", &instance);
+    jclass clazz = (*env)->GetObjectClass(env, instance);
+    jmethodID methodID = (*env)->GetMethodID(env, clazz, "getHash", "()I");
+    jint hash = (*env)->CallIntMethod(env, instance, methodID);
+    LOGE("hash %d", hash);
     return (*env)->NewStringUTF(env, "hello world");
 }
 

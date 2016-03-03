@@ -22,6 +22,10 @@ public class Demo {
 		mNativeDemo = 0;
 	}
 
+	public int getHash(){
+		return 7;
+	}
+
 	@Override
 	protected void finalize() throws Throwable {
 		try {
