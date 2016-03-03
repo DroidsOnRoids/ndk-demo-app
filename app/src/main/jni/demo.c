@@ -3,6 +3,7 @@
 #include <android/log.h>
 
 #define  LOG_TAG    "demo"
+#define  LOGE(...)  __android_log_print(ANDROID_LOG_ERROR,LOG_TAG,__VA_ARGS__)
 
 typedef struct {
 
@@ -10,7 +11,7 @@ typedef struct {
 
 JNIEXPORT jstring JNICALL
 Java_pl_droidsonroids_ndkdemo_Demo_getHelloWorld(JNIEnv *env, jobject instance) {
-    __android_log_print(ANDROID_LOG_FATAL, LOG_TAG, "hello %s %p", "world", &instance);
+    LOGE("hello %s %p", "world", &instance);
     return (*env)->NewStringUTF(env, "hello world");
 }
 
