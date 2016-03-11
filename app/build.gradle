@@ -16,7 +16,7 @@ model {
 		moduleName = "demo"
 		cppFlags.add("-Werror")
 		ldLibs.addAll(["log", "GLESv2"])
-		platformVersion "21"
+		platformVersion "23"
 	}
 
 	android.buildTypes {
