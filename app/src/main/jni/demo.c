@@ -34,3 +34,10 @@ JNIEXPORT void JNICALL
 Java_pl_droidsonroids_ndkdemo_Demo_release__J(JNIEnv *env, jobject instance, jlong ptr) {
     free((void *) ptr);
 }
+
+JNIEXPORT void JNICALL
+Java_pl_droidsonroids_ndkdemo_Foo_release(JNIEnv *env, jobject instance) {
+
+    // TODO
+
+}
